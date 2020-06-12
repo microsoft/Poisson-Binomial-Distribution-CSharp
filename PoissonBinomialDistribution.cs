@@ -9,6 +9,9 @@
 
     public class PoiBinProcessor : Processor
     {
+    
+        private bool debug = false;
+        private bool debugNumerical = false;
 
         private double[] get_pmf_xi(double[] probabilities)
         {
@@ -43,19 +46,19 @@
             for (index = 0; index < firsthalfchi.Length; index++)
             {
                 if(debugNumerical)
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("chi pre: " + firsthalfchi[index].ToString());
+                    Console.WriteLine("chi pre: " + firsthalfchi[index].ToString());
                 chi[index + 1] = Complex.Divide(firsthalfchi[index], new Complex(chi.Length, 0));
                 if(debugNumerical)
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("chi post: " + chi[index + 1].ToString());
+                    Console.WriteLine("chi post: " + chi[index + 1].ToString());
             }
             index++;
             for (int p = 0; p < secondHalfChi.Length; p++)
             {
                 if(debugNumerical)
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("chi pre: " + conjugatedSecondHalfChi[p].ToString());
+                    Console.WriteLine("chi pre: " + conjugatedSecondHalfChi[p].ToString());
                 chi[index] = Complex.Divide(conjugatedSecondHalfChi[p], new Complex(chi.Length, 0));
                 if(debugNumerical)
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("chi post: " + chi[index].ToString());
+                    Console.WriteLine("chi post: " + chi[index].ToString());
                 index++;
             }
 
@@ -66,7 +69,7 @@
             {
                 for (int f = 0; f < chi.Length; f++)
                 {
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("chi post fft: " + chi[f].ToString());
+                    Console.WriteLine("chi post fft: " + chi[f].ToString());
                 }
             }
 
@@ -90,7 +93,7 @@
             // https://stackoverflow.com/questions/29241056/how-does-numpy-newaxis-work-and-when-to-use-it
             // https://docs.microsoft.com/en-us/dotnet/api/system.numerics.complex.exp?view=netframework-4.7.2
             if(debugNumerical)
-                ScopeRuntime.Diagnostics.DebugStream.WriteLine("Omega: " + omega.ToString());
+                Console.WriteLine("Omega: " + omega.ToString());
             Complex i = new Complex(0, 1);
             int index = start;
             Complex[][] exp_value = new Complex[stop - start][];
@@ -99,7 +102,7 @@
                 Complex[] value = new Complex[] { Complex.Exp(omega * index * i) };
                 exp_value[p] = value;
                 if(debugNumerical)
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("exp_value: " + value[0].ToString());
+                    Console.WriteLine("exp_value: " + value[0].ToString());
                 index++;
             }
             
@@ -194,7 +197,7 @@
             {
                 for (int k = 0; k < argz_sum.Length; k++)
                 {
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("argz_sum: " + argz_sum[k].ToString());
+                    Console.WriteLine("argz_sum: " + argz_sum[k].ToString());
                 }
             }
             // sum(axis=1):
@@ -226,7 +229,7 @@
             {
                 for (int e = 0; e < exparg.Length; e++)
                 {
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("exparg: " + exparg[e].ToString());
+                    Console.WriteLine("exparg: " + exparg[e].ToString());
                 }
             }
 
@@ -245,7 +248,7 @@
             {
                 for (int d = 0; d < d_value.Length; d++)
                 {
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("d_value: " + d_value[d].ToString());
+                    Console.WriteLine("d_value: " + d_value[d].ToString());
                 }
             }
 
@@ -269,7 +272,7 @@
             {
                 for (int c = 0; c < chi.Length; c++)
                 {
-                    ScopeRuntime.Diagnostics.DebugStream.WriteLine("final chi: " + chi[c].ToString());
+                    Console.WriteLine("final chi: " + chi[c].ToString());
                 }
             }
 
