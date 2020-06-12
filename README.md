@@ -1,6 +1,8 @@
 
 # Poisson Binomial Distribution for C#
 
+## About
+
 Binomial probability distribution is the probability distribution of the sum of independent Bernoulli random variables with
 non-uniform success probabilities. This implementation of the Poisson Binomial probability distribution is based on the python version developed by Mika Straka (https://github.com/tsakim/poibin).
 
@@ -10,15 +12,15 @@ Methods included:
 
 More information on the Poisson Binomial distribution can be found here: [Yili Hong, On computing the distribution function for the Poisson binomial distribution, Computational Statistics & Data Analysis, Volume 59, March 2013, pages 41-51,ISSN 0167-9473](http://dx.doi.org/10.1016/j.csda.2012.10.006)
 
-# Usage
+## Usage
 
 This code does not contain an FFT implementation. For it to run and work correctly, you will need to add a C# FFT library. I recommend and have used https://www.nayuki.io/res/free-small-fft-in-multiple-languages/FftTest.cs. If you use this source, the functional called in the code will call this FFT function without changes needed to the input parameters.
 
-# Author
+## Author
 
 Kay Toma
 
-# Contributing
+## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
