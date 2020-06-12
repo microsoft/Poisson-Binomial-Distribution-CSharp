@@ -7,7 +7,7 @@
     using System.Globalization;
     using System.Collections;
 
-    public class PoiBinProcessor : Processor
+    public class PoiBinProcessor
     {
     
         private bool debug = false;
