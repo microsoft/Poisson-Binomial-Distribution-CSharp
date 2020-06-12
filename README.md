@@ -16,9 +16,9 @@ More information on the Poisson Binomial distribution can be found here: [Yili H
 
 This code does not contain an FFT implementation. For it to run and work correctly, you will need to add a C# FFT library. I recommend and have used https://www.nayuki.io/res/free-small-fft-in-multiple-languages/FftTest.cs. If you use this source, the functional called in the code will call this FFT function without changes needed to the input parameters.
 
-## Author
+## Authors
 
-Kay Toma
+Kay Toma, Carlos Zamora Cura
 
 ## Contributing
 
